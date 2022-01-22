@@ -1,0 +1,92 @@
+{
+	// Use IntelliSense to learn about possible attributes.
+	// Hover to view descriptions of existing attributes.
+	// For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+	"version": "0.2.0",
+	"configurations": [
+		{
+			"type": "lldb",
+			"request": "launch",
+			"name": "Debug unit tests in library 'tiny-grep'",
+			"cargo": {
+				"args": [
+					"test",
+					"--no-run",
+					"--lib",
+					"--package=tiny-grep",
+				],
+				"filter": {
+					"name": "tiny-grep",
+					"kind": "lib"
+				}
+			},
+			"args": [],
+			"cwd": "${workspaceFolder}"
+		},
+		{
+			"type": "lldb",
+			"request": "launch",
+			"name": "Debug executable 'tiny-grep'",
+			"cargo": {
+				"args": [
+					"build",
+					"--bin=tiny-grep",
+					"--package=tiny-grep",
+				],
+				"filter": {
+					"name": "tiny-grep",
+					"kind": "bin"
+				}
+			},
+			"args": [
+				"H",
+				"${workspaceFolder}/poem.txt"
+			],
+			"cwd": "${workspaceFolder}"
+		},
+		{
+			"type": "lldb",
+			"request": "launch",
+			"name": "Debug unit tests in executable 'tiny-grep'",
+			"cargo": {
+				"args": [
+					"test",
+					"--no-run",
+					"--bin=tiny-grep",
+					"--package=tiny-grep",
+				],
+				"filter": {
+					"name": "tiny-grep",
+					"kind": "bin"
+				}
+			},
+			"args": [
+				"H",
+				"${workspaceFolder}/poem.txt"
+			],
+			"cwd": "${workspaceFolder}"
+		},
+		{
+			"type": "lldb",
+			"request": "launch",
+			"name": "Debug integration test 'test_run'",
+			"cargo": {
+				"args": [
+					"test",
+					"--no-run",
+					"--test=test_run",
+					"--package=tiny-grep",
+				],
+				"filter": {
+					"name": "test_run",
+					"kind": "test"
+				}
+			},
+			"args": [
+				"H",
+				"${workspaceFolder}/poem.txt"
+			],
+			"cwd": "${workspaceFolder}"
+		}
+	]
+}
