@@ -12,13 +12,21 @@ pub fn find(config: Config) -> Result<(), Box<dyn Error>> {
   let contents = fs::read_to_string(config.filename)?;
 
   println!("With text:\n{}", contents);
+  println!("=========================");
 
-  for line in contents.lines() {
-    if line.contains(&config.query) {
-      println!("{}", line);
-      println!("{}", "====");
-    }
-  }
+  // for line in contents.lines() {
+  //   if line.contains(&config.query) {
+  //     println!("{}", line);
+  //     println!("{}", "====");
+  //   }
+  // }
+
+  // 闭包、迭代器
+  contents
+    .lines()
+    .filter(|line| line.contains(&config.query))
+    .for_each(|line| println!("{}", line));
+
   Ok(()) //没有返回值，只是为了消除编译器的警告
 }
 

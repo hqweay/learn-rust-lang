@@ -39,7 +39,7 @@
 				}
 			},
 			"args": [
-				"H",
+				"How",
 				"${workspaceFolder}/poem.txt"
 			],
 			"cwd": "${workspaceFolder}"
@@ -61,7 +61,7 @@
 				}
 			},
 			"args": [
-				"H",
+				"How",
 				"${workspaceFolder}/poem.txt"
 			],
 			"cwd": "${workspaceFolder}"
@@ -83,7 +83,7 @@
 				}
 			},
 			"args": [
-				"H",
+				"How",
 				"${workspaceFolder}/poem.txt"
 			],
 			"cwd": "${workspaceFolder}"
